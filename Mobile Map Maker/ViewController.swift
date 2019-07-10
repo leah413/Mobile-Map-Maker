@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let northwesternAnnotation = MKPointAnnotation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let latitude = 42.055984
+        let longitutde = -87.675171
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitutde)
+        northwesternAnnotation.coordinate = coordinate
+        northwesternAnnotation.title = "Northwestern University"
+        mapView.addAnnotation(northwesternAnnotation)
     }
 
 
